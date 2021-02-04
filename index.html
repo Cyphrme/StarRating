@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Star Rating</title>
+
+	<head>
+	<!-- Font Awesome --> 
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+			integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+			crossorigin="anonymous" />
+	</head>
+
+<body>
+
+
+	<script>
+		var stars;
+		document.addEventListener('DOMContentLoaded', () => {
+			stars = document.querySelectorAll(".reviewStars span");
+
+			stars.forEach(item => {
+				item.addEventListener('click', function () {
+					var rating = this.getAttribute("data-rating");
+					return SetRatingStar(rating, stars);
+				});
+			});
+		});
+
+/**
+* SetRatingStar sets the rating on page
+*
+* @param {int} rating           Int of the rating value. 
+* @returns {object} stars       html stars elements
+*
+*/
+		function SetRatingStar(rating, stars) {
+			var len = stars.length;
+			console.log(rating);
+
+			for (var i = 0; i < len; i++) {
+				if (i < rating) {
+					stars[i].innerHTML = '<i class="fas fa-star"></i>';
+				} else {
+					stars[i].innerHTML = '<i class="far fa-star"></i>';
+				}
+			}
+
+		};
+	</script>
+
+	<div class="container">
+		<div class="reviewStars">
+			<span data-rating="1"><i class="far fa-star"></i></span>
+			<span data-rating="2"><i class="far fa-star"></i></span>
+			<span data-rating="3"><i class="far fa-star"></i></span>
+			<span data-rating="4"><i class="far fa-star"></i></span>
+			<span data-rating="5"><i class="far fa-star"></i></span>
+		</div>
+	</div>
+</body>
+
+</html>

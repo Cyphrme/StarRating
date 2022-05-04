@@ -1,4 +1,4 @@
-# rating
+# Star Rating
 HTML rating with stars
 
 

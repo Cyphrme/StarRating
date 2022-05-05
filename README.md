@@ -2,4 +2,4 @@
 HTML rating with stars
 
 
-Demo at https://zamicol.github.io/rating/index.html
+Demo at https://cyphrme.github.io/star_rating
